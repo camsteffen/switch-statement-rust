@@ -1,0 +1,11 @@
+[package]
+name = "switch_statement"
+version = "0.1.0"
+authors = ["Cameron Steffen <cam.steffen94@gmail.com>"]
+edition = "2018"
+description = "A simple switch statement macro"
+readme = "README.md"
+repository = "https://github.com/camsteffen/switch-statement-rust"
+license-file = "LICENSE"
+keywords = ["macro", "match"]
+categories = ["rust-patterns"]
