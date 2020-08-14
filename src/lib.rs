@@ -26,14 +26,12 @@
 /// ```
 #[macro_export]
 macro_rules! switch {
-    ($v:expr; $($a:expr => $b:expr,)* _ => $e:expr,) => {
+    ($v:expr; $($a:expr => $b:expr,)* _ => $e:expr $(,)?) => {
         match $v {
             $(v if v == $a => $b,)*
             _ => $e,
         }
     };
-
-    ($v:expr; $($a:expr => $b:expr),* , _ => $e:expr) => (switch!($v; $($a => $b,)* _ => $e,));
 }
 
 #[cfg(test)]
@@ -45,6 +43,8 @@ mod tests {
 
     #[test]
     fn it_works() {
+        assert!(switch! { 1; _ => true });
+
         let v = switch! { A | B;
             A => false,
             B | C => false,
