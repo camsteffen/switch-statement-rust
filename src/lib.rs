@@ -1,3 +1,5 @@
+#![no_std]
+
 /// Emulates a `switch` statement.
 ///
 /// The syntax is similar to `match` except that every left-side expression is
